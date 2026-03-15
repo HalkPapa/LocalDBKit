@@ -45,3 +45,7 @@ logs/
 data/knowledge/*.pdf
 data/knowledge/*.docx
 !data/knowledge/sample_*.md
+monitoring/*.json
+
+# Logs
+logs/
