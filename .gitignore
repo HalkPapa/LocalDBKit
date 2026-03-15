@@ -29,7 +29,6 @@ ENV/
 Thumbs.db
 
 # Docker volumes (if stored locally)
-data/
 volumes/
 
 # Logs
@@ -39,7 +38,7 @@ logs/
 # Claude Code
 .claude/
 
-# Knowledge data (keep only samples)
-knowledge/*.pdf
-knowledge/*.docx
-!knowledge/sample_*.md
+# Knowledge data (keep init-scripts and samples only)
+data/knowledge/*.pdf
+data/knowledge/*.docx
+!data/knowledge/sample_*.md

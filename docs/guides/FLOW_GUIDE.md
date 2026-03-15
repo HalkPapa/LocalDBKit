@@ -306,17 +306,17 @@ open http://localhost:3000
 
 **方法A: 個別ファイル**
 ```bash
-./add_knowledge.sh ~/Documents/python_guide.pdf
+./scripts/knowledge/add_knowledge.sh ~/Documents/python_guide.pdf
 ```
 
 **方法B: 複数ファイル**
 ```bash
-./add_knowledge.sh ~/Documents/*.md
+./scripts/knowledge/add_knowledge.sh ~/Documents/*.md
 ```
 
 **方法C: フォルダ一括**
 ```bash
-./add_knowledge.sh ~/Documents/programming/
+./scripts/knowledge/add_knowledge.sh ~/Documents/programming/
 ```
 
 **サポート形式**:
@@ -440,17 +440,17 @@ client.upsert(collection_name="knowledge", points=points)
 
 **例1: プログラミング書籍を追加**
 ```bash
-./add_knowledge.sh ~/Books/effective_python.pdf
+./scripts/knowledge/add_knowledge.sh ~/Books/effective_python.pdf
 ```
 
 **例2: 個人ノートを一括追加**
 ```bash
-./add_knowledge.sh ~/Notes/programming/*.md
+./scripts/knowledge/add_knowledge.sh ~/Notes/programming/*.md
 ```
 
 **例3: プロジェクトドキュメント追加**
 ```bash
-./add_knowledge.sh ~/Projects/myapp/docs/
+./scripts/knowledge/add_knowledge.sh ~/Projects/myapp/docs/
 ```
 
 **例4: Webページを追加**
@@ -459,7 +459,7 @@ client.upsert(collection_name="knowledge", points=points)
 curl https://docs.python.org/3/tutorial/ > python_tutorial.html
 
 # 知識ベースに追加
-./add_knowledge.sh python_tutorial.html
+./scripts/knowledge/add_knowledge.sh python_tutorial.html
 ```
 
 ### API経由での追加

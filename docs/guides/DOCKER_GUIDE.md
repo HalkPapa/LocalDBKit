@@ -344,7 +344,7 @@ postgres:
 
 ```bash
 # ヘルスチェックスクリプトを実行
-./health-check.sh
+./scripts/deployment/health-check.sh
 
 # または手動でチェック
 docker exec local_postgres pg_isready -U postgres

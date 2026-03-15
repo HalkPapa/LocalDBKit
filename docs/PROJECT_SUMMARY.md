@@ -115,7 +115,7 @@
 ├── .env.example                # 環境変数のテンプレート
 │
 ├── start.sh                    # 起動スクリプト（自動環境チェック付き）
-├── health-check.sh             # ヘルスチェックスクリプト
+├── scripts/deployment/health-check.sh             # ヘルスチェックスクリプト
 │
 ├── init-scripts/               # PostgreSQL初期化スクリプト
 │   └── 01-init.sql             # pgvector拡張、サンプルテーブル作成
@@ -250,7 +250,7 @@ docker-compose up -d
 docker-compose ps
 
 # ヘルスチェック
-./health-check.sh
+./scripts/deployment/health-check.sh
 ```
 
 ### 停止

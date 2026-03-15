@@ -152,7 +152,7 @@ docker exec -it local_ollama ollama list
 
 ```bash
 # チャットアプリ起動
-streamlit run llm_apps/chat_app.py
+streamlit run apps/rag/chat_app.py
 
 # ブラウザで開く
 # http://localhost:8501
@@ -168,7 +168,7 @@ streamlit run llm_apps/chat_app.py
 
 ```bash
 # RAGアプリ起動
-streamlit run llm_apps/rag_app.py
+streamlit run apps/rag/rag_app.py
 
 # ブラウザで開く
 # http://localhost:8501

@@ -33,6 +33,35 @@
 
 **📚 詳細は [docs/README.md](docs/README.md) を参照してください。**
 
+## 📁 プロジェクト構造
+
+```
+LocalDBKit/
+├── 📄 docker-compose.yml       # Docker構成
+├── 📄 requirements.txt         # Python依存関係
+│
+├── 🚀 apps/                    # アプリケーション
+│   ├── rag/                   # RAGシステム
+│   ├── learning/              # 学習管理
+│   └── dashboard/             # ダッシュボード
+│
+├── 🔧 scripts/                 # スクリプト
+│   ├── deployment/            # デプロイメント
+│   ├── knowledge/             # 知識管理
+│   └── multi_app/             # マルチアプリ管理
+│
+├── 💾 data/                    # データ
+│   ├── knowledge/             # RAG用知識
+│   └── init-scripts/          # DB初期化
+│
+├── 📚 docs/                    # ドキュメント
+│   ├── guides/                # ガイド
+│   ├── reference/             # リファレンス
+│   └── diagrams/              # 図・ダイアグラム
+│
+└── 📝 examples/                # サンプルコード
+```
+
 ## 🤖 ローカルLLMシステム（NEW!）
 
 完全無料・プライベートなAIチャットシステムを追加しました！
@@ -45,13 +74,13 @@
 ### クイックスタート
 ```bash
 # LLMシステム起動
-./start_llm.sh
+./scripts/deployment/start_llm.sh
 
 # チャットアプリ
-streamlit run llm_apps/chat_app.py
+streamlit run apps/rag/chat_app.py
 
 # RAGアプリ
-streamlit run llm_apps/rag_app.py
+streamlit run apps/rag/rag_app.py
 
 # ブラウザで http://localhost:8501 を開く
 ```
@@ -146,7 +175,7 @@ docker-compose up -d
 docker ps
 
 # またはヘルスチェックスクリプトを使用
-./health-check.sh
+./scripts/deployment/health-check.sh
 ```
 
 **初回起動時の注意:**
@@ -360,7 +389,7 @@ lsof -i :6333
 docker ps
 
 # 2. ヘルスチェック実行
-./health-check.sh
+./scripts/deployment/health-check.sh
 
 # 3. ログを確認
 docker-compose logs postgres
