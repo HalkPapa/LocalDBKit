@@ -56,7 +56,7 @@ fake_users_db = {
         "username": "admin",
         "full_name": "Administrator",
         "email": "admin@localdbkit.local",
-        "hashed_password": "$2b$12$EixZaYVK1fsbw1ZfbX3OXe/vTgW/6Bk7LqG3K5KZpj1nO5k8H9K4O",  # "admin"
+        "hashed_password": "$2b$12$gqf0it0WJPYLpVlJAx.9.eHPi1.Ev5feEnVvUvY9uVE5qBaOHYsP6",  # "admin"
         "disabled": False,
     }
 }

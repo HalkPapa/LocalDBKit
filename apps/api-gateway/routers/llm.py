@@ -74,8 +74,8 @@ async def list_models(
 @router.post("/chat")
 @limiter.limit("10/minute")
 async def chat(
-    http_request: Request,
-    chat_request: ChatRequest,
+    request: Request,
+    data: ChatRequest,
     current_user: User = Depends(get_current_active_user)
 ) -> ChatResponse:
     """
@@ -86,7 +86,7 @@ async def chat(
     """
     # TODO: Implement Ollama chat API
     return ChatResponse(
-        model=chat_request.model,
+        model=data.model,
         message=ChatMessage(
             role="assistant",
             content="LLM chat integration - coming soon"
