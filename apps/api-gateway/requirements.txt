@@ -1,0 +1,39 @@
+# API Gateway Dependencies
+
+# FastAPI and Server
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+python-multipart==0.0.9
+
+# Authentication
+pyjwt==2.8.0
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+
+# Rate Limiting
+slowapi==0.1.9
+redis==5.0.1
+
+# Database Clients
+psycopg2-binary==2.9.9
+pymongo==4.6.1
+qdrant-client==1.7.3
+
+# HTTP Client
+httpx==0.26.0
+aiohttp==3.9.3
+
+# Data Validation
+pydantic==2.6.1
+pydantic-settings==2.1.0
+
+# CORS
+python-cors==1.0.0
+
+# Logging
+python-json-logger==2.0.7
+
+# Testing (optional)
+pytest==8.0.0
+pytest-asyncio==0.23.4
+httpx==0.26.0

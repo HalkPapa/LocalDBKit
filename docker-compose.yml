@@ -209,6 +209,28 @@ services:
       - redis
     restart: unless-stopped
 
+  # API Gateway
+  api-gateway:
+    build: ./apps/api-gateway
+    container_name: local_api_gateway
+    ports:
+      - "8000:8000"
+    environment:
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-your-secret-key-change-in-production}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - POSTGRES_URL=postgresql://postgres:postgres@postgres:5432/mydb
+      - MONGODB_URL=mongodb://admin:admin@mongodb:27017
+      - OLLAMA_URL=http://ollama:11434
+      - QDRANT_URL=http://qdrant:6333
+    depends_on:
+      - redis
+      - postgres
+      - mongodb
+      - ollama
+      - qdrant
+    restart: unless-stopped
+
 volumes:
   postgres_data:
   redis_data:
