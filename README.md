@@ -11,6 +11,8 @@
 
 ローカル開発用のオールインワンデータベース環境です。PostgreSQL、MongoDB、Redis、Qdrantに加え、Ollama LLMとRAGシステムを統合しています。
 
+[English README](README_EN.md)
+
 ## ⚡ クイックスタート
 
 ```bash
