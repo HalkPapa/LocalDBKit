@@ -67,6 +67,8 @@ Run `make help` for complete command list.
 - **Adminer** (port 8080) - PostgreSQL management
 - **Mongo Express** (port 8081) - MongoDB management
 - **Qdrant Dashboard** (port 6333) - Vector DB dashboard
+- **Grafana** (port 3001) - Monitoring dashboard (NEW! v0.2.0)
+- **Prometheus** (port 9090) - Metrics collection (NEW! v0.2.0)
 - **Learning Dashboard** (port 8502) - Study progress tracking
 - **LLM Dashboard** (port 8501) - Model performance comparison
 
@@ -74,7 +76,9 @@ Run `make help` for complete command list.
 
 - **Makefile** - 18+ convenient commands
 - **GitHub Actions CI/CD** - Automated testing
-- **Backup/Restore** - One-command database backup
+- **Backup/Restore** - One-command database backup (NEW! v0.2.0)
+- **Auto Backup** - Cron-based automated backup (NEW! v0.2.0)
+- **Monitoring** - Prometheus + Grafana metrics (NEW! v0.2.0)
 - **Health Checks** - Service monitoring
 - **Docker Compose** - Complete containerization
 
@@ -155,6 +159,7 @@ Excellent for:
 - **[FLOW_GUIDE.md](docs/guides/FLOW_GUIDE.md)** - System usage flow guide
 - **[LLM_GUIDE.md](docs/guides/LLM_GUIDE.md)** - Local LLM system guide
 - **[MULTI_APP_GUIDE.md](docs/guides/MULTI_APP_GUIDE.md)** - Multi-app management
+- **[BACKUP_GUIDE.md](docs/guides/BACKUP_GUIDE.md)** - Backup & restore guide (NEW! v0.2.0)
 
 ### 📋 References
 - **[ARCHITECTURE.md](docs/reference/ARCHITECTURE.md)** - System architecture
@@ -169,6 +174,61 @@ Excellent for:
 - **[PROJECT_SUMMARY.md](docs/PROJECT_SUMMARY.md)** - Project summary
 - **[WORK_LOG.md](docs/WORK_LOG.md)** - Construction log
 - **[ROADMAP.md](ROADMAP.md)** - Development roadmap
+- **[SCREENSHOTS.md](docs/SCREENSHOTS.md)** - UI screenshots (NEW! v0.2.0)
+
+## 📊 Monitoring & Management (NEW! v0.2.0)
+
+### Prometheus + Grafana Monitoring System
+
+Real-time database performance monitoring!
+
+#### Grafana Dashboard
+- **URL**: http://localhost:3001
+- **Login**: admin / admin
+- **Features**:
+  - PostgreSQL, MongoDB, Redis metrics
+  - Real-time performance monitoring
+  - Resource usage graphs
+  - Query execution time analysis
+
+#### Prometheus Metrics
+- **URL**: http://localhost:9090
+- **Features**:
+  - Metrics collection engine
+  - Time-series data storage
+  - Query language (PromQL)
+
+See **[SCREENSHOTS.md](docs/SCREENSHOTS.md)** for details
+
+### Automated Backup System
+
+Ensure data safety with automated backup features.
+
+#### Manual Backup
+```bash
+# Execute backup
+make backup
+
+# Restore from backup
+make restore BACKUP=./backups/20260315_120000
+```
+
+#### Automated Backup (cron setup)
+```bash
+# Edit crontab
+crontab -e
+
+# Daily backup at 2 AM
+0 2 * * * /path/to/LocalDBKit/scripts/deployment/auto-backup.sh
+```
+
+**Backup Contents**:
+- PostgreSQL full data (SQL)
+- MongoDB full data (compressed)
+- Redis snapshot
+- Qdrant full data
+
+See **[BACKUP_GUIDE.md](docs/guides/BACKUP_GUIDE.md)** for details
 
 ## 🛠️ Requirements
 
@@ -187,11 +247,13 @@ Excellent for:
 | Qdrant | 6333 | http://localhost:6333/dashboard |
 | Ollama | 11434 | - |
 | Open WebUI | 3000 | http://localhost:3000 |
+| **Grafana** | **3001** | **http://localhost:3001** (NEW!) |
 | Adminer | 8080 | http://localhost:8080 |
 | Mongo Express | 8081 | http://localhost:8081 |
 | RAG API | 8003 | http://localhost:8003 |
 | LLM Dashboard | 8501 | http://localhost:8501 |
 | Learning Dashboard | 8502 | http://localhost:8502 |
+| **Prometheus** | **9090** | **http://localhost:9090** (NEW!) |
 
 ## 🤝 Contributing
 

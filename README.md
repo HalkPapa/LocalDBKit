@@ -59,6 +59,7 @@ open http://localhost:3000
 - **[FLOW_GUIDE.md](docs/guides/FLOW_GUIDE.md)** - システム使用フロー完全ガイド（NEW!）
 - **[LLM_GUIDE.md](docs/guides/LLM_GUIDE.md)** - ローカルLLMシステムガイド
 - **[MULTI_APP_GUIDE.md](docs/guides/MULTI_APP_GUIDE.md)** - 複数アプリ・ゲーム管理ガイド
+- **[BACKUP_GUIDE.md](docs/guides/BACKUP_GUIDE.md)** - バックアップ・リストア完全ガイド（NEW! v0.2.0）
 
 ### 📋 リファレンス
 - **[ARCHITECTURE.md](docs/reference/ARCHITECTURE.md)** - システムアーキテクチャ詳細（NEW!）
@@ -73,6 +74,7 @@ open http://localhost:3000
 - **[PROJECT_SUMMARY.md](docs/PROJECT_SUMMARY.md)** - プロジェクトサマリー（エージェント向け）
 - **[WORK_LOG.md](docs/WORK_LOG.md)** - 作業ログ（構築の全記録）
 - **[ROADMAP.md](ROADMAP.md)** - 開発ロードマップ（将来の計画）
+- **[SCREENSHOTS.md](docs/SCREENSHOTS.md)** - UIスクリーンショット一覧（NEW! v0.2.0）
 
 **📚 詳細は [docs/README.md](docs/README.md) を参照してください。**
 
@@ -158,6 +160,60 @@ streamlit run apps/rag/rag_app.py
 - **用途**: ローカルLLM実行環境
 - **WebUI**: Streamlit (http://localhost:8501)
 - **特徴**: 完全無料、プライバシー保護、オフライン動作
+
+## 📊 モニタリング・管理（NEW! v0.2.0）
+
+### Prometheus + Grafana監視システム
+
+リアルタイムでデータベースのパフォーマンスを監視できます！
+
+#### Grafanaダッシュボード
+- **URL**: http://localhost:3001
+- **ログイン**: admin / admin
+- **機能**:
+  - PostgreSQL、MongoDB、Redisのメトリクス
+  - リアルタイムパフォーマンス監視
+  - リソース使用状況グラフ
+  - クエリ実行時間分析
+
+#### Prometheusメトリクス
+- **URL**: http://localhost:9090
+- **機能**:
+  - メトリクス収集エンジン
+  - 時系列データストレージ
+  - クエリ言語（PromQL）
+
+詳細は **[SCREENSHOTS.md](docs/SCREENSHOTS.md)** を参照
+
+### 自動バックアップシステム
+
+データの安全性を保証する自動バックアップ機能を搭載しています。
+
+#### 手動バックアップ
+```bash
+# バックアップ実行
+make backup
+
+# リストア実行
+make restore BACKUP=./backups/20260315_120000
+```
+
+#### 自動バックアップ（cron設定）
+```bash
+# crontab編集
+crontab -e
+
+# 毎日午前2時に自動バックアップ
+0 2 * * * /path/to/LocalDBKit/scripts/deployment/auto-backup.sh
+```
+
+**バックアップ内容**:
+- PostgreSQL全データ（SQL）
+- MongoDB全データ（圧縮）
+- Redisスナップショット
+- Qdrant全データ
+
+詳細は **[BACKUP_GUIDE.md](docs/guides/BACKUP_GUIDE.md)** を参照
 
 ## セットアップ
 
