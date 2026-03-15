@@ -11,6 +11,39 @@
 
 ローカル開発用のオールインワンデータベース環境です。PostgreSQL、MongoDB、Redis、Qdrantに加え、Ollama LLMとRAGシステムを統合しています。
 
+## ⚡ クイックスタート
+
+```bash
+# 1. リポジトリをクローン
+git clone https://github.com/HalkPapa/LocalDBKit.git
+cd LocalDBKit
+
+# 2. 環境変数設定
+cp .env.example .env
+
+# 3. 全サービス起動
+make up
+
+# 4. ヘルスチェック
+make health
+
+# 5. Open WebUIにアクセス
+open http://localhost:3000
+```
+
+### 📋 主要コマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `make up` | 全サービス起動 |
+| `make down` | 全サービス停止 |
+| `make health` | ヘルスチェック |
+| `make backup` | データバックアップ |
+| `make logs` | ログ表示 |
+| `make help` | 全コマンド表示 |
+
+詳細は `make help` を実行してください。
+
 ## 📖 ドキュメント
 
 **全ドキュメントは [docs/](docs/) フォルダに整理されています。**
@@ -37,6 +70,7 @@
 ### 📝 プロジェクト情報
 - **[PROJECT_SUMMARY.md](docs/PROJECT_SUMMARY.md)** - プロジェクトサマリー（エージェント向け）
 - **[WORK_LOG.md](docs/WORK_LOG.md)** - 作業ログ（構築の全記録）
+- **[ROADMAP.md](ROADMAP.md)** - 開発ロードマップ（将来の計画）
 
 **📚 詳細は [docs/README.md](docs/README.md) を参照してください。**
 
