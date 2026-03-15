@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760">
+  <defs>
+    <style>
+      .layer-bg { stroke-width: 2; }
+      .layer-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .box { fill: #ffffff; stroke: #000000; stroke-width: 1; }
+      .box-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .box-text { font-family: Arial, sans-serif; font-size: 11px; fill: #666666; }
+      .connection { stroke: #666666; stroke-width: 2; stroke-dasharray: 5,5; fill: none; }
+    </style>
+  </defs>
+
+  <!-- UI層背景 -->
+  <rect x="40" y="40" width="1020" height="140" fill="#e1f5ff" stroke="#01579b" class="layer-bg"/>
+  <text x="550" y="65" text-anchor="middle" fill="#01579b" class="layer-title">UI / 管理層</text>
+
+  <!-- UI層コンポーネント -->
+  <rect x="60" y="90" width="220" height="70" class="box"/>
+  <text x="170" y="115" text-anchor="middle" class="box-title">Open WebUI</text>
+  <text x="170" y="132" text-anchor="middle" class="box-text">:3000</text>
+  <text x="170" y="148" text-anchor="middle" class="box-text">LLM Chat</text>
+
+  <rect x="300" y="90" width="220" height="70" class="box"/>
+  <text x="410" y="115" text-anchor="middle" class="box-title">Adminer</text>
+  <text x="410" y="132" text-anchor="middle" class="box-text">:8080</text>
+  <text x="410" y="148" text-anchor="middle" class="box-text">PostgreSQL管理</text>
+
+  <rect x="540" y="90" width="220" height="70" class="box"/>
+  <text x="650" y="115" text-anchor="middle" class="box-title">Mongo Express</text>
+  <text x="650" y="132" text-anchor="middle" class="box-text">:8081</text>
+  <text x="650" y="148" text-anchor="middle" class="box-text">MongoDB管理</text>
+
+  <rect x="780" y="90" width="220" height="70" class="box"/>
+  <text x="890" y="110" text-anchor="middle" class="box-title">Dashboards</text>
+  <text x="890" y="130" text-anchor="middle" class="box-text">LLM評価 :8501</text>
+  <text x="890" y="145" text-anchor="middle" class="box-text">学習管理 :8502</text>
+
+  <!-- アプリケーション層背景 -->
+  <rect x="40" y="220" width="1020" height="160" fill="#fff3e0" stroke="#e65100" class="layer-bg"/>
+  <text x="550" y="245" text-anchor="middle" fill="#e65100" class="layer-title">アプリケーション層</text>
+
+  <!-- アプリケーション層コンポーネント -->
+  <rect x="100" y="270" width="380" height="90" class="box"/>
+  <text x="290" y="295" text-anchor="middle" class="box-title">Ollama</text>
+  <text x="290" y="312" text-anchor="middle" class="box-text">:11434</text>
+  <text x="290" y="329" text-anchor="middle" class="box-text">Gemma2:9b (メインタスク)</text>
+  <text x="290" y="346" text-anchor="middle" class="box-text">Qwen2.5:7b (静香ペルソナ)</text>
+
+  <rect x="560" y="270" width="380" height="90" class="box"/>
+  <text x="750" y="295" text-anchor="middle" class="box-title">RAG API</text>
+  <text x="750" y="312" text-anchor="middle" class="box-text">:8003 (FastAPI)</text>
+  <text x="750" y="329" text-anchor="middle" class="box-text">Knowledge Search</text>
+  <text x="750" y="346" text-anchor="middle" class="box-text">SentenceTransformer</text>
+
+  <!-- データストレージ層背景 -->
+  <rect x="40" y="420" width="1020" height="160" fill="#f1f8e9" stroke="#33691e" class="layer-bg"/>
+  <text x="550" y="445" text-anchor="middle" fill="#33691e" class="layer-title">データストレージ層</text>
+
+  <!-- データストレージ層コンポーネント -->
+  <rect x="60" y="470" width="220" height="90" class="box"/>
+  <text x="170" y="500" text-anchor="middle" class="box-title">PostgreSQL</text>
+  <text x="170" y="517" text-anchor="middle" class="box-text">:5432</text>
+  <text x="170" y="534" text-anchor="middle" class="box-text">+ pgvector</text>
+
+  <rect x="300" y="470" width="220" height="90" class="box"/>
+  <text x="410" y="500" text-anchor="middle" class="box-title">MongoDB</text>
+  <text x="410" y="517" text-anchor="middle" class="box-text">:27017</text>
+  <text x="410" y="534" text-anchor="middle" class="box-text">NoSQL / 学習記録</text>
+
+  <rect x="540" y="470" width="220" height="90" class="box"/>
+  <text x="650" y="500" text-anchor="middle" class="box-title">Redis</text>
+  <text x="650" y="517" text-anchor="middle" class="box-text">:6379</text>
+  <text x="650" y="534" text-anchor="middle" class="box-text">KVS / Cache</text>
+
+  <rect x="780" y="470" width="220" height="90" class="box"/>
+  <text x="890" y="500" text-anchor="middle" class="box-title">Qdrant</text>
+  <text x="890" y="517" text-anchor="middle" class="box-text">:6333</text>
+  <text x="890" y="534" text-anchor="middle" class="box-text">Vector Search</text>
+
+  <!-- 接続線 -->
+  <path d="M 170 160 L 170 200 L 290 200 L 290 270" class="connection"/>
+  <path d="M 170 160 L 170 200 L 750 200 L 750 270" class="connection"/>
+  <path d="M 410 160 L 410 200 L 170 200 L 170 390 L 170 470" class="connection"/>
+  <path d="M 650 160 L 650 200 L 410 200 L 410 390 L 410 470" class="connection"/>
+  <path d="M 290 360 L 290 390 L 410 390 L 410 470" class="connection"/>
+  <path d="M 750 360 L 750 390 L 890 390 L 890 470" class="connection"/>
+
+  <!-- 説明ボックス -->
+  <rect x="40" y="620" width="1020" height="120" fill="#fff9c4" stroke="#f57f17"/>
+  <text x="50" y="645" fill="#f57f17" style="font-family: Arial; font-size: 14px; font-weight: bold;">システム構成</text>
+  <text x="50" y="670" style="font-family: Arial; font-size: 12px;">• 完全ローカル環境（Docker Compose）</text>
+  <text x="50" y="690" style="font-family: Arial; font-size: 12px;">• RAGシステムによる知識拡張LLM</text>
+  <text x="50" y="710" style="font-family: Arial; font-size: 12px;">• 学習セッション記録・目標管理機能</text>
+  <text x="50" y="730" style="font-family: Arial; font-size: 12px;">• マルチモデル対応（Gemma2:9b メインタスク / Qwen2.5:7b 静香ペルソナ）</text>
+</svg>

@@ -1,0 +1,45 @@
+# Environment variables
+.env
+
+# Node modules
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes (if stored locally)
+data/
+volumes/
+
+# Logs
+*.log
+logs/
+
+# Claude Code
+.claude/
+
+# Knowledge data (keep only samples)
+knowledge/*.pdf
+knowledge/*.docx
+!knowledge/sample_*.md

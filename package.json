@@ -1,0 +1,29 @@
+{
+  "name": "local-database-environment",
+  "version": "1.0.0",
+  "description": "ローカルデータベース開発環境",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "restart": "docker-compose restart",
+    "logs": "docker-compose logs -f",
+    "status": "docker-compose ps",
+    "clean": "docker-compose down -v"
+  },
+  "keywords": [
+    "database",
+    "postgresql",
+    "redis",
+    "mongodb",
+    "qdrant",
+    "docker"
+  ],
+  "dependencies": {
+    "pg": "^8.11.3",
+    "redis": "^4.6.12",
+    "mongodb": "^6.3.0",
+    "@qdrant/js-client-rest": "^1.7.0"
+  },
+  "devDependencies": {}
+}

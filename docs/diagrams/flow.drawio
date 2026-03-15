@@ -1,0 +1,309 @@
+<mxfile host="app.diagrams.net" modified="2026-03-15T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram name="使用フロー" id="flow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1200">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- タイトル -->
+        <mxCell id="title" value="システム使用フロー - インターフェースからサーバー接続" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="600" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ========== フロー1: LLMチャット ========== -->
+        <mxCell id="flow1-title" value="フロー1: LLMチャット（RAG統合）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1f5ff;strokeColor=#01579b;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="660" height="380" as="geometry"/>
+        </mxCell>
+
+        <!-- ユーザー -->
+        <mxCell id="user1" value="ユーザー" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="130" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Open WebUI -->
+        <mxCell id="openwebui1" value="Open WebUI&lt;br&gt;:3000" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="140" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- RAG API -->
+        <mxCell id="ragapi1" value="RAG API&lt;br&gt;:8003&lt;br&gt;/search" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;" vertex="1" parent="1">
+          <mxGeometry x="360" y="140" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Qdrant -->
+        <mxCell id="qdrant1" value="Qdrant&lt;br&gt;:6333&lt;br&gt;Vector Search" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f8e9;strokeColor=#33691e;" vertex="1" parent="1">
+          <mxGeometry x="540" y="140" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Ollama -->
+        <mxCell id="ollama1" value="Ollama&lt;br&gt;:11434&lt;br&gt;LLM推論" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;" vertex="1" parent="1">
+          <mxGeometry x="360" y="260" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MongoDB -->
+        <mxCell id="mongodb1" value="MongoDB&lt;br&gt;:27017&lt;br&gt;履歴保存" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f8e9;strokeColor=#33691e;" vertex="1" parent="1">
+          <mxGeometry x="180" y="260" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Learning Tracker -->
+        <mxCell id="tracker1" value="learning_tracker.py&lt;br&gt;セッション記録" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;" vertex="1" parent="1">
+          <mxGeometry x="180" y="360" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- 矢印 フロー1 -->
+        <mxCell id="arrow1-1" value="1. 質問" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1" source="user1" target="openwebui1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow1-2" value="2. 知識検索&lt;br&gt;POST /search" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1" source="openwebui1" target="ragapi1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow1-3" value="3. ベクトル検索" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1" source="ragapi1" target="qdrant1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow1-4" value="4. 関連知識" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#009900;dashed=1;" edge="1" parent="1" source="qdrant1" target="ragapi1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow1-5" value="5. コンテキスト" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#009900;dashed=1;" edge="1" parent="1" source="ragapi1" target="openwebui1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow1-6" value="6. プロンプト&lt;br&gt;+コンテキスト" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1" source="openwebui1" target="ollama1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="200" as="sourcePoint"/>
+            <mxPoint x="420" y="260" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow1-7" value="7. LLM応答" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#009900;dashed=1;" edge="1" parent="1" source="ollama1" target="openwebui1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="290" as="sourcePoint"/>
+            <mxPoint x="300" y="200" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow1-8" value="8. 履歴保存" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#cc6600;" edge="1" parent="1" source="openwebui1" target="mongodb1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow1-9" value="9. セッション記録" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#cc6600;" edge="1" parent="1" source="mongodb1" target="tracker1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow1-10" value="10. 回答表示" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#009900;dashed=1;" edge="1" parent="1" source="openwebui1" target="user1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ========== フロー2: 知識追加 ========== -->
+        <mxCell id="flow2-title" value="フロー2: 知識追加" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="740" y="80" width="620" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- ユーザー -->
+        <mxCell id="user2" value="ユーザー" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="780" y="130" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- add_knowledge.sh -->
+        <mxCell id="addknowledge" value="add_knowledge.sh&lt;br&gt;スクリプト" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="880" y="140" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- rag_system.py -->
+        <mxCell id="ragsystem" value="rag_system.py&lt;br&gt;チャンク分割&lt;br&gt;ベクトル化" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="140" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Qdrant2 -->
+        <mxCell id="qdrant2" value="Qdrant&lt;br&gt;:6333&lt;br&gt;知識保存" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f8e9;strokeColor=#33691e;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="140" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- 矢印 フロー2 -->
+        <mxCell id="arrow2-1" value="1. ドキュメント&lt;br&gt;(.pdf/.md/.txt)" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1" source="user2" target="addknowledge">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow2-2" value="2. 処理実行" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1" source="addknowledge" target="ragsystem">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow2-3" value="3. ベクトル保存" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1" source="ragsystem" target="qdrant2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow2-4" value="4. 完了通知" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#009900;dashed=1;" edge="1" parent="1" source="qdrant2" target="user2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="240"/>
+              <mxPoint x="800" y="240"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== フロー3: データベース管理 ========== -->
+        <mxCell id="flow3-title" value="フロー3: データベース管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f8e9;strokeColor=#33691e;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="740" y="320" width="620" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- ユーザー -->
+        <mxCell id="user3" value="ユーザー" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="780" y="360" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Adminer -->
+        <mxCell id="adminer" value="Adminer&lt;br&gt;:8080&lt;br&gt;Web UI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="880" y="370" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- PostgreSQL -->
+        <mxCell id="postgres" value="PostgreSQL&lt;br&gt;:5432&lt;br&gt;SQL実行" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f8e9;strokeColor=#33691e;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="370" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Mongo Express -->
+        <mxCell id="mongoexpress" value="Mongo Express&lt;br&gt;:8081&lt;br&gt;Web UI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="370" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MongoDB2 -->
+        <mxCell id="mongodb2" value="MongoDB&lt;br&gt;:27017&lt;br&gt;CRUD操作" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f8e9;strokeColor=#33691e;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="370" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- 矢印 フロー3 -->
+        <mxCell id="arrow3-1" value="PostgreSQL管理" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;startArrow=classic;startFill=1;" edge="1" parent="1" source="user3" target="adminer">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow3-2" value="SQL" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;startArrow=classic;startFill=1;" edge="1" parent="1" source="adminer" target="postgres">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow3-3" value="MongoDB管理" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#cc6600;startArrow=classic;startFill=1;" edge="1" parent="1" source="user3" target="mongoexpress">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow3-4" value="NoSQL" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#cc6600;startArrow=classic;startFill=1;" edge="1" parent="1" source="mongoexpress" target="mongodb2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ========== フロー4: 学習管理 ========== -->
+        <mxCell id="flow4-title" value="フロー4: 学習管理・可視化" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="500" width="660" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- ユーザー -->
+        <mxCell id="user4" value="ユーザー" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="550" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Learning Dashboard -->
+        <mxCell id="learndash" value="learning_dashboard.py&lt;br&gt;:8502&lt;br&gt;Streamlit UI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="560" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MongoDB3 -->
+        <mxCell id="mongodb3" value="MongoDB&lt;br&gt;:27017&lt;br&gt;sessions&lt;br&gt;messages&lt;br&gt;goals" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f8e9;strokeColor=#33691e;" vertex="1" parent="1">
+          <mxGeometry x="400" y="560" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- LLM Dashboard -->
+        <mxCell id="llmdash" value="llm_dashboard.py&lt;br&gt;:8501&lt;br&gt;Streamlit UI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="600" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- 矢印 フロー4 -->
+        <mxCell id="arrow4-1" value="統計・グラフ表示" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;startArrow=classic;startFill=1;" edge="1" parent="1" source="user4" target="learndash">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow4-2" value="データ取得" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1" source="learndash" target="mongodb3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow4-3" value="モデル評価表示" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#cc6600;startArrow=classic;startFill=1;" edge="1" parent="1" source="user4" target="llmdash">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ========== フロー5: RAG API直接利用 ========== -->
+        <mxCell id="flow5-title" value="フロー5: RAG API直接利用" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="740" y="500" width="620" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- 外部アプリ -->
+        <mxCell id="extapp" value="外部アプリ&lt;br&gt;カスタムUI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="780" y="550" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- RAG API -->
+        <mxCell id="ragapi2" value="RAG API&lt;br&gt;:8003" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;" vertex="1" parent="1">
+          <mxGeometry x="960" y="550" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- エンドポイント -->
+        <mxCell id="endpoints" value="POST /search&lt;br&gt;GET /documents&lt;br&gt;POST /documents/add&lt;br&gt;DELETE /documents/delete&lt;br&gt;POST /context" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="540" width="180" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- 矢印 フロー5 -->
+        <mxCell id="arrow5-1" value="HTTP Request" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;startArrow=classic;startFill=1;" edge="1" parent="1" source="extapp" target="ragapi2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow5-2" value="JSON Response" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1" source="ragapi2" target="endpoints">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 凡例 -->
+        <mxCell id="legend-title" value="凡例" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="740" width="300" height="140" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="legend1" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="780" as="sourcePoint"/>
+            <mxPoint x="140" y="780" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend1-text" value="リクエスト" style="text;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="150" y="770" width="100" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="legend2" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#009900;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="810" as="sourcePoint"/>
+            <mxPoint x="140" y="810" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend2-text" value="レスポンス" style="text;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="150" y="800" width="100" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="legend3" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#cc6600;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="840" as="sourcePoint"/>
+            <mxPoint x="140" y="840" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend3-text" value="データ保存" style="text;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="150" y="830" width="100" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="legend4" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0066cc;startArrow=classic;startFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="870" as="sourcePoint"/>
+            <mxPoint x="140" y="870" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend4-text" value="双方向通信" style="text;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="150" y="860" width="100" height="20" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
