@@ -70,13 +70,13 @@ make restore BACKUP=./backups/20260315_120000
 crontab -e
 
 # 毎日午前2時にバックアップ実行
-0 2 * * * /Users/koikedaisuke/MyProjects/データベース構築/scripts/deployment/auto-backup.sh
+0 2 * * * /path/to/LocalDBKit/scripts/deployment/auto-backup.sh
 
 # 毎週日曜日午前3時にバックアップ実行
-0 3 * * 0 /Users/koikedaisuke/MyProjects/データベース構築/scripts/deployment/auto-backup.sh
+0 3 * * 0 /path/to/LocalDBKit/scripts/deployment/auto-backup.sh
 
 # 12時間ごとにバックアップ実行
-0 */12 * * * /Users/koikedaisuke/MyProjects/データベース構築/scripts/deployment/auto-backup.sh
+0 */12 * * * /path/to/LocalDBKit/scripts/deployment/auto-backup.sh
 ```
 
 #### 環境変数設定

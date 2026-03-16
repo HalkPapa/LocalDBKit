@@ -3,7 +3,7 @@
 **プロジェクト名**: ローカルデータベース環境
 **作業日**: 2026年3月9日
 **作成者**: Claude Sonnet 4.5 (Anthropic)
-**ユーザー**: koikedaisuke
+**ユーザー**: YOUR_USERNAME
 **作業時間**: 約4時間
 
 ---
@@ -280,10 +280,10 @@ COMPOSE_PROJECT_NAME=local_databases
 **解決方法**:
 ```bash
 # 一時的
-export DOCKER_HOST=unix:///Users/koikedaisuke/.colima/default/docker.sock
+export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
 
 # 恒久的（~/.zshrc に追加）
-echo 'export DOCKER_HOST=unix:///Users/koikedaisuke/.colima/default/docker.sock' >> ~/.zshrc
+echo 'export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock' >> ~/.zshrc
 ```
 
 **対応時間**: 15分
@@ -567,7 +567,7 @@ Redis Commander: 8082
 
 1. **DOCKER_HOST環境変数が必須**
    ```bash
-   export DOCKER_HOST=unix:///Users/koikedaisuke/.colima/default/docker.sock
+   export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
    ```
 
 2. **ディスク容量は起動時に指定**
@@ -737,8 +737,8 @@ Redis Commander: 8082
 ## 📞 問い合わせ・サポート
 
 ### プロジェクト関連
-- **ユーザー**: koikedaisuke
-- **プロジェクトパス**: `/Users/koikedaisuke/MyProjects/データベース構築`
+- **ユーザー**: YOUR_USERNAME
+- **プロジェクトパス**: `/path/to/LocalDBKit`
 
 ### AI支援
 - **作成者**: Claude Sonnet 4.5
@@ -794,7 +794,7 @@ Redis Commander: 8082
 
 ## 🙏 謝辞
 
-このプロジェクトの成功は、ユーザー（koikedaisuke）の明確な要件定義と、問題発生時の迅速な対応・情報提供によるものです。
+このプロジェクトの成功は、ユーザー（YOUR_USERNAME）の明確な要件定義と、問題発生時の迅速な対応・情報提供によるものです。
 
 特に以下の点で協力いただきました:
 - Colima環境の情報提供

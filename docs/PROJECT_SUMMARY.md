@@ -218,7 +218,7 @@ COMPOSE_PROJECT_NAME=local_databases  # ★重要★ 日本語ディレクトリ
 **Colima使用時の必須設定:**
 ```bash
 # ~/.zshrc または ~/.bashrc に追加
-export DOCKER_HOST=unix:///Users/koikedaisuke/.colima/default/docker.sock
+export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
 ```
 
 **Colimaリソース設定:**
@@ -234,7 +234,7 @@ colima start --disk 60 --cpu 4 --memory 8
 
 ```bash
 # プロジェクトディレクトリに移動
-cd /Users/koikedaisuke/MyProjects/データベース構築
+cd /path/to/LocalDBKit
 
 # 全サービス起動
 docker-compose up -d

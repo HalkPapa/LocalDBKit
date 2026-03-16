@@ -92,7 +92,7 @@
 
 ```bash
 # プロジェクトディレクトリに移動
-cd /Users/koikedaisuke/MyProjects/データベース構築
+cd /path/to/LocalDBKit
 
 # 全サービス起動（Ollama含む）
 docker-compose up -d

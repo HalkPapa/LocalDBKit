@@ -418,7 +418,7 @@ client.upsert(collection_name="knowledge", points=points)
 ```
 📚 知識追加ツール
 ==================================================
-📄 追加: /Users/koikedaisuke/Documents/python_guide.pdf
+📄 追加: /path/to/documents/python_guide.pdf
    ├─ ファイルサイズ: 2.3MB
    ├─ 抽出テキスト: 45,230文字
    ├─ チャンク数: 113

@@ -40,7 +40,7 @@ qdrant_data      → Qdrantのデータ
 
 ```bash
 # プロジェクトディレクトリに移動
-cd /Users/koikedaisuke/MyProjects/データベース構築
+cd /path/to/LocalDBKit
 
 # 全コンテナを起動（バックグラウンド）
 docker-compose up -d

@@ -31,7 +31,8 @@ refresh_button = st.sidebar.button("🔄 データ更新")
 OLLAMA_API_URL = "http://localhost:11434/api"
 
 # 評価結果ファイルパス
-EVAL_DIR = Path("/Users/koikedaisuke/MyProjects/personal agent/Docs/MultiModelLLM/evaluation")
+# Evaluation directory - configure to your evaluation data location
+EVAL_DIR = Path("./data/evaluation")  # Default: local evaluation directory
 
 # ==============================
 # データ読み込み

@@ -183,7 +183,7 @@ colima start --disk 60 --cpu 4 --memory 12
 
 ### 全サービス起動
 ```bash
-cd "/Users/koikedaisuke/MyProjects/データベース構築"
+cd "/path/to/LocalDBKit"
 docker-compose up -d
 ```
 

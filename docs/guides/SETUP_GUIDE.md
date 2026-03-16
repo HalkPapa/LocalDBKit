@@ -112,7 +112,7 @@ docker ps
 ### 2-1. プロジェクトディレクトリに移動
 
 ```bash
-cd /Users/koikedaisuke/MyProjects/データベース構築
+cd /path/to/LocalDBKit
 ```
 
 ### 2-2. データベースコンテナを起動
@@ -206,7 +206,7 @@ python examples/qdrant/python_example.py
 colima start
 
 # データベースを起動
-cd /Users/koikedaisuke/MyProjects/データベース構築
+cd /path/to/LocalDBKit
 docker-compose up -d
 ```
 
@@ -295,7 +295,7 @@ docker ps
 ```bash
 # 正しいディレクトリにいるか確認
 pwd
-# /Users/koikedaisuke/MyProjects/データベース構築 であるべき
+# /path/to/LocalDBKit であるべき
 
 # コンテナを起動
 docker-compose up -d
