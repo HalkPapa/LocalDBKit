@@ -1,6 +1,6 @@
 # LocalDBKit
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Personal Use](https://img.shields.io/badge/License-Personal%20Use-red.svg)](LICENSE)
 [![Docker](https://img.shields.io/badge/Docker-Compose-blue.svg)](https://www.docker.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791.svg)](https://www.postgresql.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-7-47A248.svg)](https://www.mongodb.com/)
@@ -665,3 +665,63 @@ docker-compose up -d
 - ネットワークを適切に分離
 - SSL/TLS接続を有効化
 - 定期的なバックアップを実施
+
+---
+
+## 📜 ライセンス / License
+
+**LocalDBKit Personal Use License**
+
+このソフトウェアは個人利用専用ライセンスの下で提供されています。
+
+### ✅ 許可されていること
+- 個人的な非商用利用
+- 学習・研究目的での使用
+- ソースコードの閲覧・改変（個人利用範囲内）
+- バグ報告・プルリクエストでの貢献
+
+### ❌ 禁止されていること
+- **商用利用**（企業での利用など）
+- **改変版の配布**（改変したコードの公開・共有）
+
+### 💰 商用利用について
+商用利用をご希望の場合は、ライセンスオプションについてお問い合わせください。
+
+詳細は [LICENSE](LICENSE) ファイルをご確認ください。
+
+---
+
+## 💖 サポート / Support
+
+このプロジェクトが役に立った場合は、ぜひサポートをご検討ください！
+
+### カンパ・寄付 / Donations
+開発継続のためのカンパ・寄付を大歓迎します。
+
+**寄付方法**:
+- GitHub Sponsors: [HalkPapa](https://github.com/sponsors/HalkPapa)（準備中）
+- その他の方法については [FUNDING.yml](.github/FUNDING.yml) をご確認ください
+
+### その他の貢献方法
+- ⭐ GitHubでスター
+- 🐛 バグレポート
+- 💡 機能提案
+- 📖 ドキュメント改善
+- 🌐 翻訳協力
+
+---
+
+## 🙏 謝辞 / Acknowledgments
+
+このプロジェクトは以下のオープンソースプロジェクトに支えられています：
+- [PostgreSQL](https://www.postgresql.org/) + [pgvector](https://github.com/pgvector/pgvector)
+- [MongoDB](https://www.mongodb.com/)
+- [Redis](https://redis.io/)
+- [Qdrant](https://qdrant.tech/)
+- [Ollama](https://ollama.com/)
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Docker](https://www.docker.com/)
+
+---
+
+**© 2026 HalkPapa. All rights reserved.**

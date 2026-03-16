@@ -1,21 +1,157 @@
-MIT License
+LocalDBKit Personal Use License
+================================
 
 Copyright (c) 2026 HalkPapa
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## 1. Definitions
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+"Software" refers to the LocalDBKit source code, documentation, and associated files.
+"You" refers to the individual or entity exercising permissions under this License.
+"Personal Use" means use for individual, non-commercial purposes.
+"Commercial Use" means any use primarily intended for commercial advantage or monetary compensation.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## 2. Grant of Rights
+
+Subject to the terms and conditions of this License, the copyright holder hereby grants You a worldwide, royalty-free, non-exclusive license to:
+
+a) **Use** the Software for Personal Use purposes
+b) **Copy** the Software for Personal Use purposes
+c) **Modify** the Software for your own Personal Use (internal modifications only)
+d) **Study** the Software for learning and educational purposes
+
+## 3. Restrictions
+
+You may NOT:
+
+a) **Commercial Use**: Use the Software, in whole or in part, for any Commercial Use without explicit written permission from the copyright holder.
+
+b) **Distribution of Modifications**: Distribute, publish, or share any modified versions of the Software, whether publicly or privately, even if modified for Personal Use.
+
+c) **Sublicensing**: Grant sublicenses to the Software or any portion thereof.
+
+d) **Redistribution**: Redistribute the original Software except by directing others to the official repository (https://github.com/HalkPapa/LocalDBKit).
+
+## 4. Permitted Activities
+
+You MAY:
+
+a) **Fork** the repository on GitHub for your own Personal Use (private modifications)
+b) **Share** the link to the official repository
+c) **Contribute** to the official repository via pull requests (contributions become part of the original Software)
+d) **Report** issues and bugs
+e) **Make donations** to support the project (see FUNDING.yml)
+
+## 5. Attribution
+
+If you publicly reference, discuss, or create educational content about the Software, you must provide proper attribution to the original author (HalkPapa) and link to the official repository.
+
+## 6. Commercial Use Inquiries
+
+If you wish to use LocalDBKit for Commercial Use, please contact the copyright holder for licensing options.
+
+Contact: https://github.com/HalkPapa
+
+## 7. Contributions
+
+By submitting a contribution (pull request, issue, suggestion) to the Software, you agree that:
+
+a) Your contribution may be included in the Software under this License
+b) You grant the copyright holder a perpetual, worldwide, non-exclusive, royalty-free license to use, modify, and distribute your contribution
+c) You have the right to submit the contribution
+
+## 8. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+## 9. Limitation of Liability
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## 10. Termination
+
+This License automatically terminates if you violate any of its terms. Upon termination, you must cease all use of the Software and destroy all copies in your possession.
+
+## 11. Governing Law
+
+This License shall be governed by and construed in accordance with the laws of Japan.
+
+---
+
+## 日本語版（参考訳）
+
+### 1. 定義
+
+「本ソフトウェア」とは、LocalDBKitのソースコード、ドキュメント、および関連ファイルを指します。
+「利用者」とは、本ライセンスに基づいて権利を行使する個人または団体を指します。
+「個人利用」とは、個人的かつ非商用目的での使用を意味します。
+「商用利用」とは、主に商業上の利益または金銭的対価を目的とした使用を意味します。
+
+### 2. 許可される権利
+
+本ライセンスの条件に従い、著作権者は利用者に対して以下の権利を付与します：
+
+a) 個人利用目的での**使用**
+b) 個人利用目的での**複製**
+c) 個人利用目的での**改変**（内部的な改変のみ）
+d) 学習および教育目的での**研究**
+
+### 3. 制限事項
+
+以下の行為は**禁止**されています：
+
+a) **商用利用**: 著作権者の明示的な書面による許可なく、本ソフトウェアの全部または一部を商用利用すること
+
+b) **改変版の配布**: 改変したバージョンの本ソフトウェアを、公開・非公開を問わず配布、公開、共有すること
+
+c) **再ライセンス**: 本ソフトウェアの全部または一部について再ライセンスを付与すること
+
+d) **再配布**: 公式リポジトリ(https://github.com/HalkPapa/LocalDBKit)への誘導以外の方法で本ソフトウェアを再配布すること
+
+### 4. 許可される活動
+
+以下の行為は**許可**されています：
+
+a) 個人利用のためにGitHub上でリポジトリを**フォーク**すること（プライベートな改変）
+b) 公式リポジトリへのリンクを**共有**すること
+c) プルリクエストを通じて公式リポジトリに**貢献**すること
+d) 問題やバグを**報告**すること
+e) プロジェクトを支援するための**カンパ・寄付**（FUNDING.yml参照）
+
+### 5. 帰属表示
+
+本ソフトウェアについて公に言及、議論、または教育コンテンツを作成する場合は、原作者（HalkPapa）への適切な帰属表示と公式リポジトリへのリンクを記載する必要があります。
+
+### 6. 商用利用に関するお問い合わせ
+
+LocalDBKitを商用利用する場合は、著作権者にライセンスオプションについてお問い合わせください。
+
+連絡先: https://github.com/HalkPapa
+
+### 7. 貢献
+
+本ソフトウェアへの貢献（プルリクエスト、issue、提案）を提出することにより、利用者は以下に同意したものとみなされます：
+
+a) 貢献が本ライセンスの下で本ソフトウェアに含まれる可能性があること
+b) 著作権者に対して、貢献を使用、改変、配布するための永続的、世界的、非独占的、ロイヤリティフリーのライセンスを付与すること
+c) 貢献を提出する権利を有すること
+
+### 8. 保証の免責
+
+本ソフトウェアは「現状のまま」提供され、明示的または黙示的な保証は一切ありません。
+
+### 9. 責任の制限
+
+著作権者は、契約、不法行為、その他を問わず、本ソフトウェアの使用に起因するいかなる請求、損害、その他の責任についても一切責任を負いません。
+
+### 10. 終了
+
+本ライセンスの条項に違反した場合、本ライセンスは自動的に終了します。終了時には、本ソフトウェアの使用を中止し、所有するすべてのコピーを破棄する必要があります。
+
+### 11. 準拠法
+
+本ライセンスは日本国の法律に準拠し、解釈されるものとします。
+
+---
+
+**Version**: 1.0
+**Last Updated**: March 16, 2026
