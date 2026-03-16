@@ -1,157 +1,331 @@
-LocalDBKit Personal Use License
-================================
+LocalDBKit Timed Personal Use License
+========================================
 
+Version 1.0
 Copyright (c) 2026 HalkPapa
 
-## 1. Definitions
+---
 
-"Software" refers to the LocalDBKit source code, documentation, and associated files.
-"You" refers to the individual or entity exercising permissions under this License.
-"Personal Use" means use for individual, non-commercial purposes.
-"Commercial Use" means any use primarily intended for commercial advantage or monetary compensation.
+## SUMMARY
 
-## 2. Grant of Rights
+This license permits personal use, small-scale commercial use, and will
+automatically convert to the Apache License 2.0 on 2029-03-16, allowing
+unrestricted use thereafter.
 
-Subject to the terms and conditions of this License, the copyright holder hereby grants You a worldwide, royalty-free, non-exclusive license to:
+Key restrictions until 2029-03-16:
+- No distribution of modified versions (prevents malware/reputation risk)
+- Large commercial organizations must obtain a separate license
+- Official distribution only through https://github.com/HalkPapa/LocalDBKit
 
-a) **Use** the Software for Personal Use purposes
-b) **Copy** the Software for Personal Use purposes
-c) **Modify** the Software for your own Personal Use (internal modifications only)
-d) **Study** the Software for learning and educational purposes
+---
 
-## 3. Restrictions
+## 1. DEFINITIONS
+
+**"Software"** refers to LocalDBKit, including all source code, documentation,
+and associated files.
+
+**"You"** refers to the individual or legal entity exercising permissions
+under this License.
+
+**"Personal Use"** means use by an individual for non-commercial purposes.
+
+**"Small Business"** means an organization that meets one of the following:
+  a) Has fewer than 10 total employees (full-time equivalent), OR
+  b) Has total annual gross revenue less than ¥100,000,000 JPY
+     (approximately US $1,000,000)
+
+**"Commercial Use"** means any use primarily intended for commercial advantage
+or monetary compensation.
+
+**"Modified Version"** means any derivative work or modification of the Software.
+
+**"Change Date"** means 2029-03-16.
+
+---
+
+## 2. GRANT OF RIGHTS (Until Change Date)
+
+Subject to the terms and conditions of this License, the Licensor hereby
+grants You a worldwide, royalty-free, non-exclusive, non-transferable license to:
+
+a) **Use** the Software for Personal Use
+b) **Use** the Software for Commercial Use if You qualify as a Small Business
+c) **Use** the Software for educational and research purposes
+d) **Copy** the Software for permitted purposes
+e) **Modify** the Software for your own internal use only
+f) **Study** the Software for learning purposes
+
+---
+
+## 3. RESTRICTIONS (Until Change Date)
 
 You may NOT:
 
-a) **Commercial Use**: Use the Software, in whole or in part, for any Commercial Use without explicit written permission from the copyright holder.
+a) **Distribute Modified Versions**: Distribute, publish, sublicense, or
+   share any modified versions of the Software, whether publicly or privately,
+   in source or binary form.
 
-b) **Distribution of Modifications**: Distribute, publish, or share any modified versions of the Software, whether publicly or privately, even if modified for Personal Use.
+   Rationale: This restriction protects against malware injection and
+   maintains the Software's reputation.
 
-c) **Sublicensing**: Grant sublicenses to the Software or any portion thereof.
+b) **Commercial Use by Large Organizations**: Use the Software for Commercial
+   Use if You do not qualify as a Small Business, without obtaining a separate
+   Commercial License from the Licensor.
 
-d) **Redistribution**: Redistribute the original Software except by directing others to the official repository (https://github.com/HalkPapa/LocalDBKit).
+c) **Redistribute**: Redistribute the original Software except by directing
+   others to the official repository at:
+   https://github.com/HalkPapa/LocalDBKit
 
-## 4. Permitted Activities
+d) **Remove Notices**: Alter, remove, or obscure any licensing, copyright,
+   or trademark notices in the Software.
+
+e) **Sublicense**: Grant sublicenses to the Software or any portion thereof.
+
+---
+
+## 4. PERMITTED ACTIVITIES (Until Change Date)
 
 You MAY:
 
-a) **Fork** the repository on GitHub for your own Personal Use (private modifications)
-b) **Share** the link to the official repository
-c) **Contribute** to the official repository via pull requests (contributions become part of the original Software)
-d) **Report** issues and bugs
-e) **Make donations** to support the project (see FUNDING.yml)
+a) **Fork for Private Use**: Fork the repository on GitHub for your own
+   Personal Use or Small Business internal use (private modifications only)
 
-## 5. Attribution
+b) **Contribute**: Submit contributions to the official repository via
+   pull requests (contributions become part of the official Software)
 
-If you publicly reference, discuss, or create educational content about the Software, you must provide proper attribution to the original author (HalkPapa) and link to the official repository.
+c) **Share Links**: Share the link to the official repository
 
-## 6. Commercial Use Inquiries
+d) **Report Issues**: Report bugs and security vulnerabilities
 
-If you wish to use LocalDBKit for Commercial Use, please contact the copyright holder for licensing options.
+e) **Make Donations**: Support the project financially (see FUNDING.yml)
+
+f) **Evaluate**: Use the Software for evaluation and testing purposes
+   (up to 90 days) regardless of organization size
+
+---
+
+## 5. EXCEPTIONS - ALWAYS PERMITTED (Until Change Date)
+
+The following uses are permitted regardless of organization size or revenue:
+
+a) **Personal Use**: Individual use for non-commercial purposes
+
+b) **Educational Use**: Use in schools, universities, and other educational
+   institutions for teaching and learning
+
+c) **Academic Research**: Use in non-profit research institutions for
+   academic research purposes
+
+d) **Evaluation**: Trial use for up to 90 days to evaluate the Software
+
+---
+
+## 6. GROWTH TRANSITION (Until Change Date)
+
+If your organization initially qualifies as a Small Business but later
+exceeds the size limits:
+
+a) You must contact the Licensor within 30 days of exceeding the limits
+b) You must obtain a Commercial License before continuing Commercial Use
+c) The Licensor will negotiate Commercial License terms in good faith
 
 Contact: https://github.com/HalkPapa
 
-## 7. Contributions
+---
 
-By submitting a contribution (pull request, issue, suggestion) to the Software, you agree that:
+## 7. TRADEMARK PROTECTION
 
-a) Your contribution may be included in the Software under this License
-b) You grant the copyright holder a perpetual, worldwide, non-exclusive, royalty-free license to use, modify, and distribute your contribution
-c) You have the right to submit the contribution
+"LocalDBKit" is a trademark of HalkPapa. Use of this trademark is not
+granted by this License.
 
-## 8. Disclaimer of Warranty
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-
-## 9. Limitation of Liability
-
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## 10. Termination
-
-This License automatically terminates if you violate any of its terms. Upon termination, you must cease all use of the Software and destroy all copies in your possession.
-
-## 11. Governing Law
-
-This License shall be governed by and construed in accordance with the laws of Japan.
+Modified versions:
+- Must not use the "LocalDBKit" name without written permission
+- Must clearly identify as unofficial modifications
+- Must not imply endorsement by HalkPapa
 
 ---
 
-## 日本語版（参考訳）
+## 8. OFFICIAL REPOSITORY
 
-### 1. 定義
+The official and only authorized distribution point is:
+https://github.com/HalkPapa/LocalDBKit
 
-「本ソフトウェア」とは、LocalDBKitのソースコード、ドキュメント、および関連ファイルを指します。
-「利用者」とは、本ライセンスに基づいて権利を行使する個人または団体を指します。
-「個人利用」とは、個人的かつ非商用目的での使用を意味します。
-「商用利用」とは、主に商業上の利益または金銭的対価を目的とした使用を意味します。
+Security Notice: To avoid potentially malicious modifications, always
+download LocalDBKit from the official repository.
 
-### 2. 許可される権利
+---
 
-本ライセンスの条件に従い、著作権者は利用者に対して以下の権利を付与します：
+## 9. ATTRIBUTION
 
-a) 個人利用目的での**使用**
-b) 個人利用目的での**複製**
-c) 個人利用目的での**改変**（内部的な改変のみ）
-d) 学習および教育目的での**研究**
+If you publicly reference, discuss, or create educational content about
+the Software, you must:
 
-### 3. 制限事項
+a) Provide proper attribution to HalkPapa
+b) Link to the official repository
+c) Clearly indicate if discussing a modified version
 
-以下の行為は**禁止**されています：
+---
 
-a) **商用利用**: 著作権者の明示的な書面による許可なく、本ソフトウェアの全部または一部を商用利用すること
+## 10. CONTRIBUTIONS
 
-b) **改変版の配布**: 改変したバージョンの本ソフトウェアを、公開・非公開を問わず配布、公開、共有すること
+By submitting a contribution (pull request, issue, suggestion) to the
+Software, you agree that:
 
-c) **再ライセンス**: 本ソフトウェアの全部または一部について再ライセンスを付与すること
+a) Your contribution may be included in the Software under this License
+b) You grant HalkPapa a perpetual, worldwide, non-exclusive, royalty-free
+   license to use, modify, and distribute your contribution
+c) You have the right to submit the contribution
 
-d) **再配布**: 公式リポジトリ(https://github.com/HalkPapa/LocalDBKit)への誘導以外の方法で本ソフトウェアを再配布すること
+---
 
-### 4. 許可される活動
+## 11. FUTURE LICENSE GRANT
 
-以下の行為は**許可**されています：
+Effective on the Change Date (2029-03-16), this License will automatically
+convert to the Apache License, Version 2.0.
 
-a) 個人利用のためにGitHub上でリポジトリを**フォーク**すること（プライベートな改変）
-b) 公式リポジトリへのリンクを**共有**すること
-c) プルリクエストを通じて公式リポジトリに**貢献**すること
-d) 問題やバグを**報告**すること
-e) プロジェクトを支援するための**カンパ・寄付**（FUNDING.yml参照）
+On or after the Change Date, You may use the Software under the Apache
+License, Version 2.0, which permits:
+- Unrestricted commercial use
+- Distribution of modified versions
+- Use in proprietary software
 
-### 5. 帰属表示
+Until the Change Date, all restrictions in this License remain in full effect.
 
-本ソフトウェアについて公に言及、議論、または教育コンテンツを作成する場合は、原作者（HalkPapa）への適切な帰属表示と公式リポジトリへのリンクを記載する必要があります。
+Apache License 2.0 text: http://www.apache.org/licenses/LICENSE-2.0
 
-### 6. 商用利用に関するお問い合わせ
+---
 
-LocalDBKitを商用利用する場合は、著作権者にライセンスオプションについてお問い合わせください。
+## 12. DISCLAIMER OF WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+---
+
+## 13. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+## 14. TERMINATION
+
+This License automatically terminates if You violate any of its terms.
+Upon termination, You must:
+
+a) Cease all use of the Software
+b) Destroy all copies in your possession
+c) Remove any deployments of the Software
+
+If your breach is capable of being cured and You cure it within 30 days
+to the Licensor's satisfaction, your License will be reinstated.
+
+---
+
+## 15. GOVERNING LAW
+
+This License shall be governed by and construed in accordance with the
+laws of Japan.
+
+---
+
+================================================================================
+日本語による説明（参考訳）
+================================================================================
+
+このソフトウェアは「期限付き個人利用ライセンス」の下で提供されています。
+
+【現在の使用条件（2026年〜2029年3月15日）】
+
+✅ 許可される使用:
+
+1. 個人利用（非商用）
+   - 個人の学習・趣味・プロジェクト
+
+2. 小規模商用利用（以下のいずれかを満たす組織）
+   - 従業員10人未満（常勤換算）
+   - 年間売上1億円未満（約100万米ドル）
+
+3. 教育利用
+   - 学校・大学での授業
+   - 学生の課題・研究
+
+4. 学術研究
+   - 非営利研究機関での研究
+
+5. 評価・テスト
+   - 導入検討のための試用（最大90日間）
+
+❌ 禁止される使用:
+
+1. 改変版の配布（重要！）
+   - マルウェア混入や評判毀損を防ぐため
+   - 個人的な改変は可能だが、公開・配布は禁止
+
+2. 大規模商用利用（以下の両方を満たす組織）
+   - 従業員10人以上 AND 年間売上1億円以上
+   - → 商用ライセンスが必要
+
+【2029年3月16日以降】
+
+このソフトウェアは自動的に Apache License 2.0 に変更され、
+以下が可能になります:
+
+✅ 制限なしの商用利用
+✅ 改変版の配布
+✅ プロプライエタリソフトウェアでの使用
+
+【成長した企業の対応】
+
+最初は小規模だったが条件を超えた場合:
+1. 超過から30日以内に連絡
+2. 商用ライセンスを取得
+3. 料金は協議で決定
 
 連絡先: https://github.com/HalkPapa
 
-### 7. 貢献
+【商標保護】
 
-本ソフトウェアへの貢献（プルリクエスト、issue、提案）を提出することにより、利用者は以下に同意したものとみなされます：
+"LocalDBKit" は HalkPapa の商標です。
+改変版は以下を遵守してください:
+- LocalDBKitの名前を使用しない
+- 「非公式版」と明記
+- HalkPapaの承認を示唆しない
 
-a) 貢献が本ライセンスの下で本ソフトウェアに含まれる可能性があること
-b) 著作権者に対して、貢献を使用、改変、配布するための永続的、世界的、非独占的、ロイヤリティフリーのライセンスを付与すること
-c) 貢献を提出する権利を有すること
+【公式リポジトリ】
 
-### 8. 保証の免責
+https://github.com/HalkPapa/LocalDBKit
 
-本ソフトウェアは「現状のまま」提供され、明示的または黙示的な保証は一切ありません。
+安全のため、必ず公式リポジトリからダウンロードしてください。
+改変版にはマルウェアが含まれる可能性があります。
 
-### 9. 責任の制限
+【寄付・サポート】
 
-著作権者は、契約、不法行為、その他を問わず、本ソフトウェアの使用に起因するいかなる請求、損害、その他の責任についても一切責任を負いません。
+このプロジェクトを支援したい場合:
+- GitHub Sponsors: https://github.com/sponsors/HalkPapa
+- 詳細: FUNDING.yml
 
-### 10. 終了
+【よくある質問】
 
-本ライセンスの条項に違反した場合、本ライセンスは自動的に終了します。終了時には、本ソフトウェアの使用を中止し、所有するすべてのコピーを破棄する必要があります。
+Q: 従業員が9人から10人に増えたらどうする？
+A: 30日間の猶予期間内に連絡してください。
 
-### 11. 準拠法
+Q: 個人事業主は？
+A: 無条件で商用利用可能です。
 
-本ライセンスは日本国の法律に準拠し、解釈されるものとします。
+Q: オープンソース化はいつ？
+A: 2029年3月16日に自動的にApache 2.0になります。
+
+Q: 商用ライセンスの料金は？
+A: 組織規模により異なります（$2,000〜交渉）。
 
 ---
 
-**Version**: 1.0
-**Last Updated**: March 16, 2026
+Version: 1.0
+Last Updated: March 16, 2026
+Licensor: HalkPapa
+Contact: https://github.com/HalkPapa

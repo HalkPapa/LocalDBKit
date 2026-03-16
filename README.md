@@ -1,6 +1,7 @@
 # LocalDBKit
 
-[![License: Personal Use](https://img.shields.io/badge/License-Personal%20Use-red.svg)](LICENSE)
+[![License: Timed Personal Use](https://img.shields.io/badge/License-Timed%20Personal%20Use-orange.svg)](LICENSE)
+[![Future: Apache 2.0](https://img.shields.io/badge/Future-Apache%202.0-green.svg)](LICENSE)
 [![Docker](https://img.shields.io/badge/Docker-Compose-blue.svg)](https://www.docker.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791.svg)](https://www.postgresql.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-7-47A248.svg)](https://www.mongodb.com/)
@@ -670,22 +671,72 @@ docker-compose up -d
 
 ## 📜 ライセンス / License
 
-**LocalDBKit Personal Use License**
+**LocalDBKit Timed Personal Use License**
 
-このソフトウェアは個人利用専用ライセンスの下で提供されています。
+このソフトウェアは**期限付き個人利用ライセンス**の下で提供されています。
 
-### ✅ 許可されていること
+### ⏰ ライセンスタイムライン
+
+```
+2026年〜2029年3月15日: Timed Personal Use License
+        ↓
+2029年3月16日〜: Apache License 2.0（自動変換）
+```
+
+### ✅ 現在（2029年3月15日まで）許可されていること
+
+**個人利用**
 - 個人的な非商用利用
 - 学習・研究目的での使用
-- ソースコードの閲覧・改変（個人利用範囲内）
+
+**小規模商用利用**（以下のいずれかを満たす場合）
+- 従業員10人未満の組織
+- 年間売上1億円未満の組織
+
+**教育・研究利用**
+- 学校・大学での使用
+- 学術研究機関での使用
+
+**その他**
+- ソースコードの閲覧・改変（内部利用のみ）
 - バグ報告・プルリクエストでの貢献
+- 評価・テスト目的（90日間）
 
 ### ❌ 禁止されていること
-- **商用利用**（企業での利用など）
-- **改変版の配布**（改変したコードの公開・共有）
 
-### 💰 商用利用について
-商用利用をご希望の場合は、ライセンスオプションについてお問い合わせください。
+**改変版の配布**（重要！）
+- 改変したコードの公開・配布
+- マルウェア混入や評判毀損を防ぐため
+
+**大規模商用利用**
+- 従業員10人以上 AND 年間売上1億円以上の組織
+- → 商用ライセンスが必要です
+
+### 🎉 2029年3月16日以降（自動的にオープンソース化）
+
+Apache License 2.0 に自動変換され、以下が可能になります:
+- ✅ 制限なしの商用利用
+- ✅ 改変版の配布
+- ✅ プロプライエタリソフトウェアでの使用
+
+### 💰 商用ライセンスについて
+
+大規模組織（従業員10人以上 AND 売上1億円以上）で商用利用をご希望の場合は、
+お問い合わせください:
+
+**連絡先**: https://github.com/HalkPapa
+
+**参考料金**（年間・交渉可能）:
+- 10-50人規模: $2,000 - $5,000
+- 51-200人規模: $5,000 - $15,000
+- 201人以上: 個別相談
+
+### ⚠️ セキュリティ警告
+
+**公式リポジトリからのみダウンロードしてください**:
+https://github.com/HalkPapa/LocalDBKit
+
+改変版や非公式版にはマルウェアが含まれる可能性があります。
 
 詳細は [LICENSE](LICENSE) ファイルをご確認ください。
 
