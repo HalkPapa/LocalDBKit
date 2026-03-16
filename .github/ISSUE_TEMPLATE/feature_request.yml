@@ -1,0 +1,157 @@
+name: ✨ Feature Request / 機能リクエスト
+description: 新機能の提案 / Suggest a new feature for LocalDBKit
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        機能提案ありがとうございます！以下の情報を提供してください。
+        Thank you for your feature suggestion! Please provide the following information.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 確認事項 / Checklist
+      description: 提案前に以下を確認してください
+      options:
+        - label: 既存のIssue/Roadmapを確認済み / I have checked existing issues and roadmap
+          required: true
+        - label: この機能は多くのユーザーに有益 / This feature would benefit many users
+          required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 解決したい課題 / Problem to Solve
+      description: どのような問題を解決したいですか？
+      placeholder: |
+        現在、○○をする際に××という問題があります。
+        この機能があれば、△△ができるようになります。
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 提案する解決策 / Proposed Solution
+      description: どのような機能を追加すべきですか？
+      placeholder: |
+        ××機能を追加することで、以下が可能になります:
+        1. ...
+        2. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 代替案 / Alternatives Considered
+      description: 他に検討した方法はありますか？
+      placeholder: |
+        - 案1: ...
+        - 案2: ...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: カテゴリ / Category
+      description: この機能はどのカテゴリに属しますか？
+      options:
+        - データベース / Database
+        - LLM / AI
+        - RAG
+        - API Gateway
+        - Docker / Infrastructure
+        - ドキュメント / Documentation
+        - その他 / Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度（あなたにとって） / Priority (for you)
+      description: あなたにとってこの機能の重要度は？
+      options:
+        - 🔴 Critical - これがないと使えない
+        - 🟠 High - 非常に欲しい
+        - 🟡 Medium - あると便利
+        - 🟢 Low - あればいい程度
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: ユースケース / Use Case
+      description: この機能をどのように使いますか？
+      placeholder: |
+        【ユースケース1】
+        - 状況: ...
+        - 実行内容: ...
+        - 期待結果: ...
+
+        【ユースケース2】
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: 実装例（任意） / Implementation Example (Optional)
+      description: 実装のイメージがあれば記載してください
+      placeholder: |
+        ```yaml
+        # docker-compose.yml
+        new-service:
+          image: ...
+        ```
+
+        ```python
+        # API endpoint example
+        @router.post("/new-feature")
+        async def new_feature():
+            ...
+        ```
+      render: markdown
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 追加情報 / Additional Context
+      description: その他、関連する情報があれば記載してください
+      placeholder: |
+        - 参考リンク
+        - スクリーンショット
+        - 他のツールでの実装例
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: 貢献意思 / Willingness to Contribute
+      description: この機能の実装に協力できますか？
+      options:
+        - label: 自分で実装してPull Requestを送れる / I can implement and submit a PR
+        - label: テストに協力できる / I can help with testing
+        - label: ドキュメント作成に協力できる / I can help with documentation
+        - label: アイデアのみ提供 / Idea only
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        📋 **Note**
+
+        機能リクエストは [ROADMAP.md](../../ROADMAP.md) を考慮して優先順位付けされます。
+        実装を保証するものではありませんが、検討させていただきます。
+
+        Feature requests will be prioritized considering the [ROADMAP.md](../../ROADMAP.md).
+        We cannot guarantee implementation, but we will review all suggestions.

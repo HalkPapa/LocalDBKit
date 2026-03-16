@@ -1,0 +1,157 @@
+name: 🐛 Bug Report / バグ報告
+description: LocalDBKitのバグを報告 / Report a bug in LocalDBKit
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        バグ報告ありがとうございます！以下の情報を提供してください。
+        Thank you for reporting a bug! Please provide the following information.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 確認事項 / Checklist
+      description: 報告前に以下を確認してください
+      options:
+        - label: 既存のIssueを検索済み / I have searched existing issues
+          required: true
+        - label: 最新版で発生 / This happens on the latest version
+          required: true
+        - label: 公式リポジトリから取得 / Downloaded from official repository
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: バグの説明 / Bug Description
+      description: 何が起きましたか？
+      placeholder: LocalDBKitで○○を実行すると、××というエラーが発生します。
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順 / Steps to Reproduce
+      description: バグを再現する手順を教えてください
+      placeholder: |
+        1. `make up` を実行
+        2. http://localhost:8000 にアクセス
+        3. エラー発生
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待される動作 / Expected Behavior
+      description: 本来どうなるべきでしたか？
+      placeholder: 正常にサービスが起動するはず
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の動作 / Actual Behavior
+      description: 実際に何が起きましたか？
+      placeholder: |
+        エラーメッセージ:
+        Error: Connection refused
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 環境 / Environment
+      description: どの環境で発生しましたか？
+      options:
+        - macOS
+        - Linux
+        - Windows (WSL2)
+        - Windows (Docker Desktop)
+        - その他 / Other
+    validations:
+      required: true
+
+  - type: input
+    id: os_version
+    attributes:
+      label: OS バージョン / OS Version
+      description: "例: macOS 14.3, Ubuntu 22.04"
+      placeholder: macOS 14.3
+    validations:
+      required: true
+
+  - type: input
+    id: docker_version
+    attributes:
+      label: Docker バージョン / Docker Version
+      description: "`docker --version` の出力"
+      placeholder: Docker version 24.0.7
+    validations:
+      required: true
+
+  - type: dropdown
+    id: docker_runtime
+    attributes:
+      label: Docker 実行環境 / Docker Runtime
+      description: どのDocker環境を使用していますか？
+      options:
+        - Docker Desktop
+        - Colima
+        - Rancher Desktop
+        - Podman
+        - その他 / Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: ログ / Logs
+      description: "関連するログを貼り付けてください（`make logs` または `docker compose logs`）"
+      placeholder: |
+        docker compose logs の出力:
+        ```
+        ここにログを貼り付け
+        ```
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 追加情報 / Additional Context
+      description: その他、関連する情報があれば記載してください
+      placeholder: |
+        - スクリーンショット
+        - 設定ファイルの変更内容
+        - その他の関連情報
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: severity
+    attributes:
+      label: 重要度 / Severity
+      description: このバグの影響度は？
+      options:
+        - label: 🔴 Critical - サービス全体が動作しない
+        - label: 🟠 High - 主要機能が使えない
+        - label: 🟡 Medium - 一部機能に影響
+        - label: 🟢 Low - 軽微な問題
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ⚠️ **セキュリティ脆弱性の場合**
+
+        セキュリティに関わるバグの場合は、Issueではなく [SECURITY.md](../../SECURITY.md) の手順に従ってください。
+
+        For security vulnerabilities, please follow the process in [SECURITY.md](../../SECURITY.md) instead of creating a public issue.

@@ -1,0 +1,13 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Security Vulnerability / セキュリティ脆弱性
+    url: https://github.com/HalkPapa/LocalDBKit/security/advisories/new
+    about: セキュリティに関わる問題を非公開で報告 / Report security issues privately
+
+  - name: 💬 Discussions / 質問・議論
+    url: https://github.com/HalkPapa/LocalDBKit/discussions
+    about: 質問やアイデアの共有 / Ask questions or share ideas
+
+  - name: 📖 Documentation / ドキュメント
+    url: https://github.com/HalkPapa/LocalDBKit/tree/main/docs
+    about: ドキュメントを確認 / Check documentation first
