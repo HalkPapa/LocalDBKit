@@ -212,6 +212,65 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---
 
+## 13A. DATA LOSS DISCLAIMER
+
+You acknowledge and agree that use of the Software may result in data loss,
+data corruption, or data unavailability. The Licensor has no obligation to:
+
+a) Provide data recovery services
+b) Maintain backups of your data
+c) Guarantee data integrity, accuracy, or availability
+d) Compensate for any data loss or corruption
+
+You are solely responsible for:
+- Implementing appropriate backup procedures
+- Maintaining copies of critical data
+- Testing data recovery procedures
+- Ensuring data integrity
+
+---
+
+## 13B. NO SUPPORT OBLIGATION
+
+The Licensor has no obligation to:
+
+a) Provide technical support or assistance
+b) Fix bugs, vulnerabilities, or defects
+c) Provide updates, upgrades, or patches
+d) Respond to feature requests or enhancement suggestions
+e) Maintain or continue development of the Software
+f) Provide documentation or training
+
+Any support, bug fixes, or updates provided by the Licensor are:
+- Provided on a voluntary basis
+- At the Licensor's sole discretion
+- Without any guarantee of quality or timeliness
+- Subject to immediate discontinuation without notice
+
+---
+
+## 13C. SPECIFIC DAMAGES EXCLUSION
+
+Without limiting the generality of Sections 12 and 13, the Licensor shall
+not be liable for:
+
+a) Loss of profits, revenue, or business opportunities
+b) Loss of data, information, or confidential materials
+c) Business interruption or downtime
+d) Loss of business goodwill or reputation
+e) Costs of procurement of substitute software or services
+f) Any indirect, incidental, special, exemplary, punitive, or consequential
+   damages of any kind
+g) Damages resulting from unauthorized access or security breaches
+h) Damages caused by third-party modifications or integrations
+i) Damages resulting from Your failure to implement adequate security measures
+j) Damages arising from reliance on the Software for critical operations
+
+The above exclusions apply even if the Licensor has been advised of the
+possibility of such damages.
+
+---
+
 ## 14. TERMINATION
 
 This License automatically terminates if You violate any of its terms.
@@ -233,9 +292,36 @@ laws of Japan.
 
 ---
 
+## 16. LANGUAGE PRECEDENCE
+
+This License is provided in both English and Japanese for convenience.
+
+In the event of any conflict, inconsistency, or ambiguity between the
+English version and the Japanese translation:
+
+a) The English version shall prevail and control
+b) The English version shall be deemed the authoritative and legally
+   binding version
+c) The Japanese translation is provided for informational purposes only
+   and has no independent legal force
+
+Any legal proceedings or disputes relating to this License shall be
+conducted in English, with the English version of this License serving
+as the governing document.
+
+---
+
 ================================================================================
 日本語による説明（参考訳）
 ================================================================================
+
+【重要: 言語の優先順位】
+本ライセンスは英語版と日本語版で提供されていますが、英語版が正式版です。
+英語版と日本語訳の間に矛盾や不整合がある場合、英語版が優先され、
+法的拘束力を持ちます。日本語訳は参考情報としてのみ提供されており、
+独立した法的効力はありません。
+
+---
 
 このソフトウェアは「期限付き個人利用ライセンス」の下で提供されています。
 
@@ -309,6 +395,45 @@ https://github.com/HalkPapa/LocalDBKit
 - GitHub Sponsors: https://github.com/sponsors/HalkPapa
 - 詳細: FUNDING.yml
 
+【免責事項・責任制限】
+
+⚠️ 重要: 以下の点について、作者は一切の責任を負いません
+
+1. データ損失・破損
+   - ソフトウェアの使用によりデータが失われる可能性があります
+   - バックアップは利用者の責任です
+   - データ復旧サービスの提供義務はありません
+   - データの完全性・正確性・可用性を保証しません
+
+2. サポート義務
+   - 技術サポートの提供義務はありません
+   - バグ修正・脆弱性対応の義務はありません
+   - アップデート・機能追加の義務はありません
+   - 開発継続の保証はありません
+   - サポート提供は任意であり、予告なく終了する可能性があります
+
+3. 損害賠償の免責
+   - 利益・収益の損失
+   - データ・情報の損失
+   - 事業中断・ダウンタイム
+   - 評判・信用の損失
+   - 代替ソフトウェアの調達費用
+   - 間接的・付随的・特別な損害
+   - セキュリティ侵害による損害
+   - 第三者による改変・統合に起因する損害
+   - 重要業務での使用に起因する損害
+
+上記の免責は、損害の可能性を事前に通知されていた場合でも適用されます。
+
+【ソフトウェアの保証】
+
+このソフトウェアは「現状のまま」提供され、以下の保証は一切ありません:
+- 正常に動作する保証
+- バグがない保証
+- セキュリティ上安全である保証
+- 特定の目的に適合する保証
+- 継続的に使用できる保証
+
 【よくある質問】
 
 Q: 従業員が9人から10人に増えたらどうする？
@@ -325,7 +450,7 @@ A: 組織規模により異なります（$2,000〜交渉）。
 
 ---
 
-Version: 1.0
+Version: 1.1
 Last Updated: March 16, 2026
 Licensor: HalkPapa
 Contact: https://github.com/HalkPapa
