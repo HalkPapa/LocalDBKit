@@ -56,10 +56,11 @@ open http://localhost:3000
 ### 📖 ガイド
 - **[SETUP_GUIDE.md](docs/guides/SETUP_GUIDE.md)** - 完全なセットアップガイド（初めての方はこちら）
 - **[DOCKER_GUIDE.md](docs/guides/DOCKER_GUIDE.md)** - Docker完全ガイド（全てDockerで動作）
-- **[FLOW_GUIDE.md](docs/guides/FLOW_GUIDE.md)** - システム使用フロー完全ガイド（NEW!）
+- **[FLOW_GUIDE.md](docs/guides/FLOW_GUIDE.md)** - システム使用フロー完全ガイド
+- **[API_GATEWAY_GUIDE.md](docs/guides/API_GATEWAY_GUIDE.md)** - API Gateway完全ガイド（NEW! v0.3.0）
 - **[LLM_GUIDE.md](docs/guides/LLM_GUIDE.md)** - ローカルLLMシステムガイド
 - **[MULTI_APP_GUIDE.md](docs/guides/MULTI_APP_GUIDE.md)** - 複数アプリ・ゲーム管理ガイド
-- **[BACKUP_GUIDE.md](docs/guides/BACKUP_GUIDE.md)** - バックアップ・リストア完全ガイド（NEW! v0.2.0）
+- **[BACKUP_GUIDE.md](docs/guides/BACKUP_GUIDE.md)** - バックアップ・リストア完全ガイド（v0.2.0）
 
 ### 📋 リファレンス
 - **[ARCHITECTURE.md](docs/reference/ARCHITECTURE.md)** - システムアーキテクチャ詳細（NEW!）
@@ -107,9 +108,36 @@ LocalDBKit/
 └── 📝 examples/                # サンプルコード
 ```
 
-## 🤖 ローカルLLMシステム（NEW!）
+## 🚀 API Gateway & Multimodal RAG（NEW! v0.3.0）
 
-完全無料・プライベートなAIチャットシステムを追加しました！
+統合APIとマルチモーダルRAGシステムを追加しました！
+
+### できること
+- **API Gateway**: JWT認証、レート制限、Swagger UIによる統一API
+- **マルチモーダル処理**: OCR（画像）、PDF、音声、動画処理
+- **マルチモーダルRAG**: テキスト・画像・PDFを横断した質問応答
+- **LLM統合**: Ollama経由での埋め込み生成とLLM応答
+
+### クイックスタート
+```bash
+# サービス起動
+make up
+
+# API Gateway（Swagger UI）
+open http://localhost:8000/api/v1/docs
+
+# マルチモーダルプロセッサー（Swagger UI）
+open http://localhost:8001/api/v1/docs
+
+# サンプル実行
+python examples/multimodal-rag/multimodal_rag_example.py
+```
+
+詳細は **[API_GATEWAY_GUIDE.md](docs/guides/API_GATEWAY_GUIDE.md)** を参照
+
+## 🤖 ローカルLLMシステム
+
+完全無料・プライベートなAIチャットシステム！
 
 ### できること
 - **チャットボット**: Ollamaとの会話（会話履歴保存）
@@ -160,6 +188,18 @@ streamlit run apps/rag/rag_app.py
 - **用途**: ローカルLLM実行環境
 - **WebUI**: Streamlit (http://localhost:8501)
 - **特徴**: 完全無料、プライバシー保護、オフライン動作
+
+### 6. API Gateway（NEW! v0.3.0）
+- **ポート**: 8000
+- **用途**: 統合APIエンドポイント、JWT認証、レート制限
+- **Swagger UI**: http://localhost:8000/api/v1/docs
+- **機能**: LLM管理、RAG、データベース統合
+
+### 7. Multimodal Processor（NEW! v0.3.0）
+- **ポート**: 8001
+- **用途**: OCR、PDF処理、音声・動画処理（計画中）
+- **Swagger UI**: http://localhost:8001/api/v1/docs
+- **機能**: 画像からテキスト抽出、PDF解析
 
 ## 📊 モニタリング・管理（NEW! v0.2.0）
 
@@ -408,6 +448,18 @@ Dashboard: http://localhost:6333/dashboard
 ## 使用例
 
 各データベースの使用例は `examples/` ディレクトリを参照してください。
+
+### マルチモーダルRAG例（NEW! v0.3.0）
+
+```bash
+# テキストRAG
+python examples/multimodal-rag/text_rag_example.py
+
+# マルチモーダルRAG（テキスト + 画像）
+python examples/multimodal-rag/multimodal_rag_example.py
+```
+
+詳細は [examples/multimodal-rag/README.md](examples/multimodal-rag/README.md) を参照
 
 ## データの永続化
 

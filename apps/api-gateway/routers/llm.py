@@ -7,6 +7,8 @@ from pydantic import BaseModel
 from typing import Any
 from slowapi import Limiter
 from slowapi.util import get_remote_address
+import httpx
+import logging
 
 from routers.auth import get_current_active_user, User
 from config import get_settings
@@ -14,6 +16,7 @@ from config import get_settings
 router = APIRouter()
 settings = get_settings()
 limiter = Limiter(key_func=get_remote_address)
+logger = logging.getLogger(__name__)
 
 
 # Models
@@ -53,22 +56,32 @@ async def list_models(
 
     Returns list of models from Ollama
     """
-    # TODO: Implement Ollama API call
-    return {
-        "models": [
-            {
-                "name": "gemma2:9b",
-                "size": "5.4GB",
-                "modified_at": "2026-03-15T10:00:00Z"
-            },
-            {
-                "name": "qwen2.5:7b",
-                "size": "4.7GB",
-                "modified_at": "2026-03-15T10:00:00Z"
+    try:
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            response = await client.get(f"{settings.ollama_url}/api/tags")
+            response.raise_for_status()
+            data = response.json()
+
+            # Format models for response
+            models = []
+            for model in data.get("models", []):
+                models.append({
+                    "name": model.get("name"),
+                    "size": model.get("size"),
+                    "modified_at": model.get("modified_at"),
+                    "digest": model.get("digest", "")[:12]  # Short digest
+                })
+
+            return {
+                "models": models,
+                "count": len(models)
             }
-        ],
-        "message": "LLM integration - coming soon"
-    }
+    except httpx.HTTPError as e:
+        logger.error(f"Ollama API error: {e}")
+        raise HTTPException(
+            status_code=503,
+            detail=f"Ollama service unavailable: {str(e)}"
+        )
 
 
 @router.post("/chat")
@@ -84,15 +97,42 @@ async def chat(
     Supports streaming and non-streaming responses
     Rate limit: 10 requests per minute
     """
-    # TODO: Implement Ollama chat API
-    return ChatResponse(
-        model=data.model,
-        message=ChatMessage(
-            role="assistant",
-            content="LLM chat integration - coming soon"
-        ),
-        created_at="2026-03-16T00:00:00Z"
-    )
+    try:
+        # Convert messages to Ollama format
+        messages = [{"role": msg.role, "content": msg.content} for msg in data.messages]
+
+        # Prepare Ollama request
+        ollama_request = {
+            "model": data.model,
+            "messages": messages,
+            "stream": data.stream,
+            "options": {
+                "temperature": data.temperature
+            }
+        }
+
+        async with httpx.AsyncClient(timeout=120.0) as client:
+            response = await client.post(
+                f"{settings.ollama_url}/api/chat",
+                json=ollama_request
+            )
+            response.raise_for_status()
+            result = response.json()
+
+            return ChatResponse(
+                model=result.get("model", data.model),
+                message=ChatMessage(
+                    role=result.get("message", {}).get("role", "assistant"),
+                    content=result.get("message", {}).get("content", "")
+                ),
+                created_at=result.get("created_at", "")
+            )
+    except httpx.HTTPError as e:
+        logger.error(f"Ollama chat API error: {e}")
+        raise HTTPException(
+            status_code=503,
+            detail=f"Ollama service unavailable: {str(e)}"
+        )
 
 
 @router.post("/embeddings")
@@ -105,28 +145,74 @@ async def create_embeddings(
 
     Returns vector embeddings from LLM
     """
-    # TODO: Implement Ollama embeddings API
-    return {
-        "model": request.model,
-        "embeddings": [],
-        "message": "Embeddings integration - coming soon"
-    }
+    try:
+        # Convert input to list if single string
+        texts = [request.input] if isinstance(request.input, str) else request.input
+
+        embeddings_list = []
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            for text in texts:
+                response = await client.post(
+                    f"{settings.ollama_url}/api/embeddings",
+                    json={
+                        "model": request.model,
+                        "prompt": text
+                    }
+                )
+                response.raise_for_status()
+                result = response.json()
+                embeddings_list.append(result.get("embedding", []))
+
+        return {
+            "model": request.model,
+            "embeddings": embeddings_list,
+            "count": len(embeddings_list)
+        }
+    except httpx.HTTPError as e:
+        logger.error(f"Ollama embeddings API error: {e}")
+        raise HTTPException(
+            status_code=503,
+            detail=f"Ollama service unavailable: {str(e)}"
+        )
+
+
+class ModelPullRequest(BaseModel):
+    """Model pull request"""
+    name: str
 
 
 @router.post("/models/pull")
 async def pull_model(
-    model_name: str,
+    request: ModelPullRequest,
     current_user: User = Depends(get_current_active_user)
 ) -> dict[str, Any]:
     """
     Download a model from Ollama
 
     Args:
-        model_name: Name of the model to download
+        request: Model pull request with model name
     """
-    # TODO: Implement Ollama model pull
-    return {
-        "model": model_name,
-        "status": "pending",
-        "message": "Model pull integration - coming soon"
-    }
+    try:
+        async with httpx.AsyncClient(timeout=600.0) as client:
+            # Start model pull (non-streaming for simplicity)
+            response = await client.post(
+                f"{settings.ollama_url}/api/pull",
+                json={
+                    "name": request.name,
+                    "stream": False
+                }
+            )
+            response.raise_for_status()
+            result = response.json()
+
+            return {
+                "model": request.name,
+                "status": result.get("status", "success"),
+                "message": f"Model {request.name} pull completed"
+            }
+    except httpx.HTTPError as e:
+        logger.error(f"Ollama pull API error: {e}")
+        raise HTTPException(
+            status_code=503,
+            detail=f"Ollama service unavailable: {str(e)}"
+        )

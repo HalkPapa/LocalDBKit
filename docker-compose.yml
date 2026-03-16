@@ -231,6 +231,17 @@ services:
       - qdrant
     restart: unless-stopped
 
+  # Multimodal Processor
+  multimodal-processor:
+    build: ./apps/multimodal-processor
+    container_name: local_multimodal_processor
+    ports:
+      - "8001:8001"
+    environment:
+      - TESSERACT_LANG=eng+jpn
+      - WHISPER_MODEL=base
+    restart: unless-stopped
+
 volumes:
   postgres_data:
   redis_data:
