@@ -49,3 +49,6 @@ monitoring/*.json
 
 # Logs
 logs/
+
+# Test data
+test-data/
