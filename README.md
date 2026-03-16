@@ -6,12 +6,40 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-7-47A248.svg)](https://www.mongodb.com/)
 [![Redis](https://img.shields.io/badge/Redis-7-DC382D.svg)](https://redis.io/)
 [![Qdrant](https://img.shields.io/badge/Qdrant-Latest-24386C.svg)](https://qdrant.tech/)
+![Status](https://img.shields.io/badge/Status-Development-orange.svg)
 
 🗄️ Complete local database development kit with Docker Compose
 
 ローカル開発用のオールインワンデータベース環境です。PostgreSQL、MongoDB、Redis、Qdrantに加え、Ollama LLMとRAGシステムを統合しています。
 
 [English README](README_EN.md)
+
+---
+
+## ⚠️ Production Readiness / 本番環境対応状況
+
+**Current Status: Development / 開発版 (v0.3.0)**
+
+LocalDBKit is currently suitable for:
+- ✅ **Local development environments** - 完全にローカルで動作
+- ✅ **Learning and experimentation** - AI/RAG技術の学習に最適
+- ✅ **Proof-of-concept projects** - アイデア検証・プロトタイピング
+
+**NOT recommended for production use** without addressing:
+- 🔴 **Authentication system** - Hardcoded test users (`admin:admin`)
+- 🔴 **Token management** - JWT tokens cannot be invalidated after logout
+- 🔴 **Performance optimizations** - No caching, batching, or connection pooling
+- 🔴 **Role-based access control** - No RBAC implementation
+
+**本番環境での使用には以下の改善が必要です**:
+- 認証システムの本格実装（PostgreSQL/MongoDBベースのユーザー管理）
+- トークン無効化機構（Redisブラックリスト）
+- パフォーマンス最適化（キャッシュ、バッチ処理、コネクションプーリング）
+- ロールベースアクセス制御（RBAC）
+
+📋 詳細な改善計画は [ROADMAP.md](ROADMAP.md) を参照してください。
+
+---
 
 ## ⚡ クイックスタート
 
@@ -22,6 +50,8 @@ cd LocalDBKit
 
 # 2. 環境変数設定
 cp .env.example .env
+# ⚠️ IMPORTANT: Edit .env and change all passwords before production use!
+# 重要: .envファイルを編集し、本番環境では必ず全パスワードを変更してください！
 
 # 3. 全サービス起動
 make up
@@ -52,6 +82,7 @@ open http://localhost:3000
 
 ### 🚀 クイックスタート
 - **[QUICKSTART.md](docs/guides/QUICKSTART.md)** - 5分で始めるクイックスタート
+- **[GLOSSARY.md](docs/GLOSSARY.md)** - 用語集（RAG、JWT、Embeddingなど専門用語の説明）
 
 ### 📖 ガイド
 - **[SETUP_GUIDE.md](docs/guides/SETUP_GUIDE.md)** - 完全なセットアップガイド（初めての方はこちら）
