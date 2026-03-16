@@ -1,5 +1,6 @@
 # LocalDBKit
 
+![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)
 [![License: Timed Personal Use](https://img.shields.io/badge/License-Timed%20Personal%20Use-orange.svg)](LICENSE)
 [![Future: Apache 2.0](https://img.shields.io/badge/Future-Apache%202.0-green.svg)](LICENSE)
 [![Docker](https://img.shields.io/badge/Docker-Compose-blue.svg)](https://www.docker.com/)
@@ -7,7 +8,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-7-47A248.svg)](https://www.mongodb.com/)
 [![Redis](https://img.shields.io/badge/Redis-7-DC382D.svg)](https://redis.io/)
 [![Qdrant](https://img.shields.io/badge/Qdrant-Latest-24386C.svg)](https://qdrant.tech/)
-![Status](https://img.shields.io/badge/Status-Development-orange.svg)
+![Status](https://img.shields.io/badge/Status-Stable-green.svg)
 
 🗄️ Complete local database development kit with Docker Compose
 
@@ -19,7 +20,7 @@
 
 ## ⚠️ Production Readiness / 本番環境対応状況
 
-**Current Status: Development / 開発版 (v0.3.0)**
+**Current Status: Stable for Local Development / ローカル開発向け安定版 (v1.0.0)**
 
 LocalDBKit is currently suitable for:
 - ✅ **Local development environments** - 完全にローカルで動作

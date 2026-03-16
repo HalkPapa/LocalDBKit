@@ -170,6 +170,14 @@ docker compose config --quiet
 - **Discussions**: 質問・アイデア共有
 - **Pull Requests**: コードレビュー
 
+## 🤝 行動規範 / Code of Conduct
+
+すべての貢献者は[行動規範](CODE_OF_CONDUCT.md)に従うことが期待されます。
+敬意と思いやりをもってコミュニケーションしましょう。
+
+All contributors are expected to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+Please communicate with respect and kindness.
+
 ## 📜 ライセンス
 
 コントリビューションは[Timed Personal Use License](LICENSE)の下で公開されます。
